@@ -1,6 +1,6 @@
 > ### _**1**_
 
-[![](./media/banner.png)](#)
+[![](./media/banner_clearbg.png)](#)
 
 *Prerequisites: `curl` and `clangd`.*
 ### Debian
