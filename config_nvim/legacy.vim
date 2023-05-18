@@ -49,8 +49,16 @@ let g:gruvbox_italic=1
 
 let mapleader=","
 imap jk <Esc>
-nnoremap <leader>m <Cmd>:w<CR>:bel sp<CR>:te cd ~/P/ && echo "%:p" && g++ -std=gnu++20 -DLOCAL -Wall -Wextra -O2 -Wshadow -Wfloat-equal -Wduplicated-cond -o x.out "%:p" && ./x.out<CR>i
-nnoremap <leader>k <Cmd>:w<CR>:vert sp<CR><C-w><Right>:te cd ~/P/ && echo "%:p" && g++ -std=gnu++20 -DLOCAL -Wall -Wextra -O2 -Wshadow -Wfloat-equal -Wduplicated-cond -o x.out "%:p" && ./x.out<CR>i
+
+" run shortcut, c++
+autocmd FileType cpp nnoremap <buffer> <leader>m <Cmd>:w<CR>:bel sp<CR>:te cd /tmp && echo "%:p" && g++ -std=gnu++20 -DLOCAL -Wall -Wextra -O2 -Wshadow -Wfloat-equal -Wduplicated-cond -o x.out "%:p" && ./x.out<CR>i
+autocmd FileType cpp nnoremap <buffer> <leader>k <Cmd>:w<CR>:vert sp<CR><C-w><Right>:te cd /tmp && echo "%:p" && g++ -std=gnu++20 -DLOCAL -Wall -Wextra -O2 -Wshadow -Wfloat-equal -Wduplicated-cond -o x.out "%:p" && ./x.out<CR>i
+
+" run shortcut, shell script
+autocmd FileType sh nnoremap <buffer> <leader>m <Cmd>:w<CR>:bel sp<CR>:te cd /tmp && echo "%:p" && cp "%:p" x.sh && chmod +x x.sh && ./x.sh <CR>i
+autocmd FileType sh nnoremap <buffer> <leader>k <Cmd>:w<CR>:vert sp<CR><C-w><Right>:te cd /tmp && echo "%:p" && cp "%:p" x.sh && chmod +x x.sh && ./x.sh <CR>i
+
+" other shortcuts
 nnoremap <silent> <leader>fe <Cmd>:%y<CR>
 nnoremap <silent> <leader>s <Cmd>:w<CR>
 nnoremap <silent> <leader>c <Cmd>:q<CR>
