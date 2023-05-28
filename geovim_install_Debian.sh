@@ -189,7 +189,7 @@ main() {
 	fi
 	printf '\n%s%sDone. Prerequisites verified and upgraded.%s\n\n' $FMT_BOLD $FMT_GREEN $FMT_RESET
 
-	local TEMPDIR=$HOME/Desktop/temporary_dir_geovim_`date +%F_%H_%M`
+	local TEMPDIR=/tmp/temporary_dir_geovim_`date +%F_%H_%M`
 
 	# Build neovim from source
 	printf '\n%s%sDownloading neovim repository...%s\n' $FMT_BOLD $FMT_ROSEPINE_DAWN_BASE $FMT_RESET
@@ -246,8 +246,12 @@ main() {
 
 	# Cleanup
 	printf '\n%s%sCleaning up...%s\n' $FMT_BOLD $FMT_ROSEPINE_DAWN_BASE $FMT_RESET
+	if user_can_sudo; then
+		sudo rm -r $TEMPDIR
+	else
+		rm -r $TEMPDIR
+	fi
 	printf '\n%s%sDone. Cleared.%s\n' $FMT_BOLD $FMT_GREEN $FMT_RESET
-	rm -r $TEMPDIR
 
 	print_success
 }
