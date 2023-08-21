@@ -84,6 +84,11 @@ vnoremap y "3y
 nnoremap p "3p
 nnoremap gp "3gp
 
+# tab visualization
+set list
+set listchars=tab:▒░░
+nnoremap <leader>inv <Cmd>:set invlist<CR>
+
 function! Kt()
 	let regs=split('0123456789', '\zs')
 	for r in regs
