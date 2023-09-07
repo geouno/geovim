@@ -84,7 +84,7 @@ vnoremap y "3y
 nnoremap p "3p
 nnoremap gp "3gp
 
-# tab visualization
+" tab visualization
 set list
 set listchars=tab:▒░░
 nnoremap <leader>inv <Cmd>:set invlist<CR>
