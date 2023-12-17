@@ -50,6 +50,8 @@ let g:gruvbox_italic=1
 let mapleader=","
 imap jk <Esc>
 
+let g:python_recommended_style=0
+
 " run shortcut, c++
 autocmd FileType cpp nnoremap <buffer> <leader>m <Cmd>:w<CR>:bel sp<CR>:te cd /tmp && echo "%:p" && g++ -std=gnu++20 -DLOCAL -Wall -Wextra -O2 -Wshadow -Wfloat-equal -Wduplicated-cond -o x.out "%:p" && ./x.out<CR>i
 autocmd FileType cpp nnoremap <buffer> <leader>k <Cmd>:w<CR>:vert sp<CR><C-w><Right>:te cd /tmp && echo "%:p" && g++ -std=gnu++20 -DLOCAL -Wall -Wextra -O2 -Wshadow -Wfloat-equal -Wduplicated-cond -o x.out "%:p" && ./x.out<CR>i
@@ -57,6 +59,10 @@ autocmd FileType cpp nnoremap <buffer> <leader>k <Cmd>:w<CR>:vert sp<CR><C-w><Ri
 " run shortcut, shell script
 autocmd FileType sh nnoremap <buffer> <leader>m <Cmd>:w<CR>:bel sp<CR>:te cd /tmp && echo "%:p" && cp "%:p" x.sh && chmod +x x.sh && ./x.sh <CR>i
 autocmd FileType sh nnoremap <buffer> <leader>k <Cmd>:w<CR>:vert sp<CR><C-w><Right>:te cd /tmp && echo "%:p" && cp "%:p" x.sh && chmod +x x.sh && ./x.sh <CR>i
+
+" run shortcut, python
+autocmd FileType python nnoremap <buffer> <leader>m <Cmd>:w<CR>:bel sp<CR>:te python3 "%:p" <CR>i
+autocmd FileType python nnoremap <buffer> <leader>k <Cmd>:w<CR>:vert sp<CR><C-w><Right>:te python3 "%:p" <CR>i
 
 " other shortcuts
 nnoremap <silent> <leader>fe <Cmd>:%y<CR>
